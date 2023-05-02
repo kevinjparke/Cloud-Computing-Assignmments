@@ -1,0 +1,25 @@
+version: "3"
+services:
+    app1:
+        image: kjparke/a1-app1-r
+        container_name: app1
+        ports:
+            - '5000:5000'
+        volumes:
+            - .:/app/data
+        networks:
+            - 'a1-net'
+    
+    app2:
+        image: kjparke/a1-app2-r
+        container_name: app2
+        volumes:
+            - .:/app/data
+        networks:
+            - 'a1-net'
+
+networks:
+    a1-net:
+        external: false
+        name: a1-net
+        
