@@ -1,7 +1,7 @@
-#Checksum Calculator Application
+# Checksum Calculator Application
 This application consists of two Flask microservices (App 1 and App 2) that work together to calculate the checksum of a file.
 
-##How it works
+## How it works
 When a user sends a request to /checksum endpoint of App 1, it first checks whether the request contains a JSON object with a file name. If the file name is not present or is empty, it returns an error response with a message "Invalid JSON input" and HTTP status code 400.
 
 If the file name is present, App 1 checks whether the file exists in the mounted volume. If the file does not exist, it returns an error response with a message "File not found" and HTTP status code 400.
@@ -10,7 +10,7 @@ If the file exists, App 1 sends a GET request to the / endpoint of App 2 with th
 
 Finally, App 1 returns the response it received from App 2 back to the user who made the initial request to /checksum.
 
-##Requirements
+## Requirements
 The following Python packages are required to run this application:
 
 - Flask
@@ -18,7 +18,7 @@ The following Python packages are required to run this application:
 - hashlib
 - json
 
-##How to run the application
+## How to run the application
 To run the application, follow these steps:
 
 Make sure you have all the required packages installed.
